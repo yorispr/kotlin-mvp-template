@@ -13,18 +13,13 @@
  * limitations under the License
  */
 
-package com.yorisprayogo.mvptemplate.di;
+package com.yorisprayogo.mvptemplate.di
 
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
 
-import javax.inject.Qualifier;
+import javax.inject.Qualifier
+import javax.inject.Scope
 
-/**
- * Created by janisharali on 27/01/17.
- */
 
 @Qualifier
-@Retention(RetentionPolicy.RUNTIME)
-public @interface PreferenceInfo {
-}
+@Retention(AnnotationRetention.RUNTIME)
+annotation class ApplicationContext

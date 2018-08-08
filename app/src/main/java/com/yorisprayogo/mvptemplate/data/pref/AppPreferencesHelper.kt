@@ -10,8 +10,9 @@ import com.yorisprayogo.mvptemplate.di.PreferenceInfo
 import javax.inject.Inject
 import javax.inject.Singleton
 
+@Singleton
 class AppPreferencesHelper @Inject
-constructor(@ApplicationContext context: Context) : PreferencesHelper {
+constructor(@ApplicationContext val context: Context) : PreferencesHelper {
 
     private val mPrefs: SharedPreferences = context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE)
 

@@ -12,10 +12,11 @@ import io.reactivex.Single
 import javax.inject.Inject
 import javax.inject.Singleton
 
+@Singleton
 class AppDataManager @Inject constructor(
         @ApplicationContext var context: Context,
-        private var apiHelper: AppApiHelper,
-        private var preferencesHelper: AppPreferencesHelper
+        var apiHelper: ApiHelper,
+        var preferencesHelper: PreferencesHelper
 ) : DataManager {
 
     override fun updateApiHeader(userId: Long?, accessToken: String) {

@@ -3,6 +3,7 @@ package com.yorisprayogo.mvptemplate.data
 import com.yorisprayogo.mvptemplate.data.network.ApiHelper
 import com.yorisprayogo.mvptemplate.data.pref.PreferencesHelper
 import io.reactivex.Observable
+import javax.inject.Singleton
 
 interface DataManager : PreferencesHelper, ApiHelper {
 

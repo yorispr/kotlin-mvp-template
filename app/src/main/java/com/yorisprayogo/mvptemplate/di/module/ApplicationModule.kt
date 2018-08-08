@@ -3,15 +3,15 @@ package com.yorisprayogo.mvptemplate.di.module
 import android.app.Application
 import android.content.Context
 import com.example.mvp_google_test.PREF_NAME
-import com.yorisprayogo.mvptemplate.data.network.AppApiHelper
 import com.yorisprayogo.mvptemplate.data.AppDataManager
 import com.yorisprayogo.mvptemplate.data.DataManager
+import com.yorisprayogo.mvptemplate.data.network.AppApiHelper
 import com.yorisprayogo.mvptemplate.data.network.ApiHelper
 import com.yorisprayogo.mvptemplate.data.pref.AppPreferencesHelper
 import com.yorisprayogo.mvptemplate.data.pref.PreferencesHelper
 import com.yorisprayogo.mvptemplate.di.ApplicationContext
+import com.yorisprayogo.mvptemplate.di.PerActivity
 import com.yorisprayogo.mvptemplate.di.PreferenceInfo
-import dagger.Binds
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
@@ -26,19 +26,20 @@ class ApplicationModule(private val mApplication: Application) {
     }
 
     @Provides
+    @Singleton
     fun provideApplication(): Application {
         return mApplication
     }
 
     @Provides
     @Singleton
-    fun provideDataManager(appDataManager: AppDataManager): AppDataManager {
+    fun provideDataManager(appDataManager: AppDataManager): DataManager {
         return appDataManager
     }
 
     @Provides
     @Singleton
-    fun provideApiHelper(appApiHelper: AppApiHelper): AppApiHelper {
+    fun provideApiHelper(appApiHelper: AppApiHelper): ApiHelper {
         return appApiHelper
     }
 
@@ -50,10 +51,9 @@ class ApplicationModule(private val mApplication: Application) {
 
     @Provides
     @Singleton
-    fun providePreferencesHelper(appPreferencesHelper: AppPreferencesHelper): AppPreferencesHelper {
+    fun providePreferencesHelper(appPreferencesHelper: AppPreferencesHelper): PreferencesHelper {
         return appPreferencesHelper
     }
-
 
 //    @Provides
 //    @Singleton

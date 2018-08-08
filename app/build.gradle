@@ -34,7 +34,7 @@ ext {
     retrofitVersion = '2.4.0'
     okhtttpVersion = '3.11.0'
     anko_version = '0.10.4'
-    dagger_version = '2.11'
+    dagger_version = '2.16'
     rxjava_version = '2.1.9'
     rxandroid_version = '2.0.2'
     glide_version = '4.6.1'
@@ -46,6 +46,8 @@ ext {
     junitVersion = '4.12'
     testRunnerVersion = '1.0.2'
     testEspressoVersion = '3.0.2'
+
+    mockitoVersion = '2.7.1'
 }
 
 dependencies {
@@ -76,5 +78,9 @@ dependencies {
     implementation "io.reactivex.rxjava2:rxandroid:$rxandroid_version"
     implementation "io.reactivex.rxjava2:rxjava:$rxjava_version"
 
+    // dependencies for local unit tests
+    testImplementation "junit:junit:$junitVersion"
+    testImplementation "org.mockito:mockito-core:$mockitoVersion"
+    testAnnotationProcessor "com.google.dagger:dagger-compiler:$dagger_version"
 }
 

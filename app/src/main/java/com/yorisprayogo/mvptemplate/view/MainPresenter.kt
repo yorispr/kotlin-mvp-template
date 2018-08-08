@@ -10,7 +10,7 @@ import io.reactivex.disposables.Disposable
 import javax.inject.Inject
 
 class MainPresenter<V: MainContract.MainView>
-@Inject constructor(private var dataManager: AppDataManager,
+@Inject constructor(var dataManager: DataManager,
              var compositeDisposable: CompositeDisposable) : BasePresenter<V>(dataManager, compositeDisposable), MainContract.MainPresenter<V> {
 
 

@@ -4,6 +4,7 @@ import android.app.Application
 import android.content.Context
 
 import com.yorisprayogo.mvptemplate.App
+import com.yorisprayogo.mvptemplate.data.DataManager
 import com.yorisprayogo.mvptemplate.di.ApplicationContext
 import com.yorisprayogo.mvptemplate.di.module.ApplicationModule
 
@@ -17,8 +18,8 @@ interface AppComponent {
 
     fun inject(app: App)
 
-    @ApplicationContext
-    fun context(): Context
+    @ApplicationContext fun context(): Context
 
     fun application(): Application
+    fun dataManager(): DataManager
 }

@@ -7,7 +7,7 @@ import javax.inject.Inject
 
 open class BasePresenter<V : MvpView>
 @Inject
-constructor(private val dataManager: AppDataManager,
+constructor(private val dataManager: DataManager,
             private val compositeDisposable: CompositeDisposable) : MvpPresenter<V> {
 
     var view: V? = null
